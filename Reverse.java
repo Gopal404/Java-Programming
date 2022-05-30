@@ -1,30 +1,39 @@
 import java.util.*;
-class StrRev
+public class Reverse
 {
-    String str,str2="";
-    int i,len;
-    void Insert()
+  String name;
+  int lim,i;
+  char n[];
+  public void Accept()
+  {
+    System.out.println("Enter Any String:");
+    Scanner s=new Scanner(System.in);
+    name=s.nextLine();
+  }
+
+  public void LenCount() 
+  {
+    lim= name.length();
+    n=new char[lim];
+  }
+  public void RevPrint()
+  {
+    for(i=0;i<lim;i++)
     {
-        System.out.print("Enter Any Strig: ");
-        Scanner sc =  new Scanner(System.in);
-        str=sc.nextLine();
+      n[i]=name.charAt(i);
     }
-    void Process()
+    for(i=lim-1;i>=0;i--)
     {
-        len=str.length();
-        for(i=len-1;i>=0;i--)
-        {
-            str2+=str.charAt(i);
-        }
-        System.out.print(str2);
+      System.out.print(n[i]);
     }
-}
-public class Reverse 
-{
-    public static void main(String[] args) 
-    {
-        StrRev obj = new StrRev();
-        obj.Insert();
-        obj.Process();
-    }
+  }
+  public static void main(String args[])
+  {
+    Reverse obj=new Reverse();
+    obj.Accept();
+    obj.LenCount();
+    obj.RevPrint();
+  }
+
+
 }
